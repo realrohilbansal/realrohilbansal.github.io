@@ -10,7 +10,7 @@ body {
     width: 90%;
     margin: 0 auto;
     max-width: 600px;
-    text-align: center;
+    text-align: left;
 }
 
 header {
@@ -22,14 +22,24 @@ header h1 {
     margin: 0;
 }
 
+header nav {
+    margin-top: 10px;
+}
+
 header nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin-right: 20px;
+    font-size: 1.1em;
 }
 
 main {
     margin: 20px 0;
+}
+
+main p {
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
 .highlight {
@@ -41,6 +51,10 @@ main a {
     text-decoration: none;
 }
 
+main a:hover {
+    text-decoration: underline;
+}
+
 footer {
     margin-top: 20px;
     padding: 20px 0;
@@ -50,6 +64,7 @@ footer {
 footer ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 footer ul li {
@@ -59,6 +74,10 @@ footer ul li {
 footer ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
 }
 
 footer p, footer a {
