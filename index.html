@@ -3,32 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohil's Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>rohil</title>
+    
+    <!-- Add this line for the favicon -->
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #a0a0a0;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>rohil</h1>
+<body class="min-h-screen flex flex-col justify-between text-base leading-relaxed">
+    <div class="container mx-auto px-4 py-16 max-w-2xl">
+        <header class="flex justify-between items-center mb-16">
+            <h1 class="text-3xl font-extrabold text-white">rohil</h1>
             <nav>
-                <a href="#">rohil</a>
-                <a href="#">posts</a>
+                <button class="text-gray-500 hover:text-white mr-4 focus:outline-none" id="mainBtn">main</button>
+                <button class="text-gray-500 hover:text-white focus:outline-none" id="postsBtn">posts</button>
             </nav>
         </header>
-        <main>
-            <p>Hi there, I am an <span class="highlight">engineer</span> & <span class="highlight">builder</span> making unusual and cool <span class="highlight">tools</span>.</p>
-            <p>Currently I'm building <a href="#">tangerine 🍊</a> – <a href="#">in-memory vector database</a> && <a href="#">crackeddevs.com</a></p>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="https://twitter.com/rohildev" target="_blank">Twitter @rohildev</a></li>
-                <li><a href="https://github.com/rohilbansal" target="_blank">GitHub @rohilbansal</a></li>
-                <li>Email <a href="mailto:rohilbansaltech@gmail.com">rohilbansaltech@gmail.com</a></li>
-                <li>Talk? <a href="#">@rohiltsx</a></li>
+        
+        <main id="mainContent" class="space-y-8">
+            <p class="text-lg">Hi there, I am an <span class="text-white font-medium">engineer & builder</span> making cool and useful <span class="text-white font-medium">products</span>.</p>
+            
+            <p class="text-lg">Currently I'm building <a href="#" class="text-orange-400 hover:underline">chatlingo</a> - an ai powered language tutor bot</p>
+            
+            <hr class="border-gray-800 my-10">
+            
+            <ul class="space-y-3">
+                <li>Twitter <a href="https://twitter.com/hellorohil" class="text-white underline hover:no-underline">@hellorohil</a></li>
+                <li>GitHub <a href="https://github.com/realrohilbansal" class="text-white underline hover:no-underline">@realrohilbansal</a></li>
+                <li>LinkedIn <a href="https://linkedin.com/in/realrohilbansal" class="text-white underline hover:no-underline">@realrohilbansal</a></li>
+                <li>Email <a href="mailto:rohilbansaltech@email.com" class="text-white underline hover:no-underline">rohilbansaltech@email.com</a></li>
+                <!-- <li>Talk? <a href="#" class="text-white underline hover:no-underline">@yourtalkhandle</a></li> -->
             </ul>
-            <p>2024 © rohil.</p>
-            <a href="#">RSS</a>
-        </footer>
+        </main>
+        
+        <div id="postsContent" class="hidden">
+            <!-- Add your posts content here -->
+            <p>Your posts will go here.</p>
+        </div>
     </div>
+    
+    <footer class="border-t border-gray-800 py-6">
+        <div class="container mx-auto px-4 max-w-2xl flex justify-between items-center">
+            <p class="text-sm">2024 © rohil</p>
+            <a href="#" class="text-sm text-gray-500 hover:text-white">RSS</a>
+        </div>
+    </footer>
+
+    <script>
+        const mainBtn = document.getElementById('mainBtn');
+        const postsBtn = document.getElementById('postsBtn');
+        const mainContent = document.getElementById('mainContent');
+        const postsContent = document.getElementById('postsContent');
+
+        mainBtn.addEventListener('click', () => {
+            mainContent.classList.remove('hidden');
+            postsContent.classList.add('hidden');
+        });
+
+        postsBtn.addEventListener('click', () => {
+            mainContent.classList.add('hidden');
+            postsContent.classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
